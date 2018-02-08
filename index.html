@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>galeria</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;	
+	}
+	tr>td{
+		border-radius: 9px;
+		border: 6px outset #50555C;
+		text-align: center;
+		height: 55px;
+		background-color: rgb(82, 157, 225)
+	}
+	td:first-child{
+		width: 10px;
+	}
+	td:nth-child(2){
+		width: 150px;
+	}
+	td:nth-child(3){
+		width: 300px;
+	}
+	#imatge-container{
+		float: left;
+		width: 640px;
+		overflow: hidden;
+	}
+	#imatge-container img{
+		width: 640px;
+	}
+	#container{
+		width: 640px;
+		text-align: center;
+	}
+	#controles{
+		width: 520px;
+		float: right;
+	}
+	.buttons{
+		font-family: arial;
+		font-size: 14px;
+		padding: 10px 20px;
+		border-radius: 9px;
+		border: 6px outset #50555C;
+		background-color: #529DE1;
+		width: 150px;
+	}
+	.buttons:hover {
+		color: #14396A;
+		background: #468CCF;
+	}
+	input[type=range] {
+		height: 1px;
+		-webkit-appearance: none;
+		margin: 10px 0;
+		width: 100%;
+		padding-left: 19px;
+		padding-right: 30px;
+	}
+	input[type=range]::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 14px;
+		cursor: pointer;
+		box-shadow: 1px 1px 1px #50555C;
+		background: #50555C;
+		border-radius: 14px;
+	}
+	input[type=range]::-webkit-slider-thumb {
+		height: 20px;
+		width: 40px;
+		border-radius: 12px;
+		background: #529DE1;
+		cursor: pointer;
+		-webkit-appearance: none;
+		border-left: solid 5px #003366;
+		border-right: solid 5px #003366;
+		margin-top: -3px;
+	}
+	input[type=range]::-moz-range-track {
+		width: 100%;
+		height: 14px;
+		cursor: pointer;
+		background: #50555C;
+		border-radius: 14px;
+	}
+	input[type=range]::-moz-range-thumb {
+		height: 20px;
+		width: 40px;
+		border-radius: 12px;
+		background: #529DE1;
+		cursor: pointer;
+	}
+	input[type=range]::-ms-track {
+		width: 100%;
+		height: 14px;
+		cursor: pointer;
+	}
+	input[type=range]::-ms-fill-lower {
+		background: #50555C;
+		border-radius: 28px;
+		box-shadow: 1px 1px 1px #50555C;
+	}
+	input[type=range]::-ms-fill-upper {
+		background: #50555C;
+		border: 0px solid #000000;
+		border-radius: 28px;
+		box-shadow: 1px 1px 1px #50555C;
+	}
+	input[type=range]::-ms-thumb {
+		margin-top: 1px;
+		height: 20px;
+		width: 40px;
+		border-radius: 12px;
+		background: #529DE1;
+		cursor: pointer;
+	}
+	ul{
+		width: 300px;
+		border-radius: 9px;
+		border: 6px outset #50555C;
+		text-align: center;
+		background-color: rgb(82, 157, 225)
+	}
+	#menu{
+		width: 640px;
+		float: left;
+		padding-top: 5px;
+	}
+	#menu > ul{
+		margin: auto;
+	}
+	li{
+		list-style-type: none;
+		display: none;
+		border: 6px outset #50555C;
+		text-align: center;
+		background-color: rgb(82, 157, 225)
+	}
+	ul:hover li{
+		display: block;
+	}
+	.hidden {
+		display: none;
+	}
+	.pap{
+		width: 220px; 
+		height: 35px;
+	}
+</style>
+</head>
+<body>
+	<div id="controles">
+		<table>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Brillo</td>
+				<td><svg class="pap"><use href="#cerodoscientos"/></svg><input type="range" min="0" max="200" step="1" value="100"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Contraste</td>
+				<td><svg class="pap"><use href="#cerodoscientos"/></svg><input type="range" min="0" max="200" step="1" value="100"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Escala de grises</td>
+				<td><svg class="pap"><use href="#cerocien"/></svg><input type="range" min="0" max="100" step="1" value="0"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Borrosidad</td>
+				<td><svg class="pap"><use href="#cerocien"/></svg><input type="range" min="0" max="10" step="1" value="0"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Saturacion</td>
+				<td><svg class="pap"><use href="#cerodoscientos"/></svg><input type="range" min="0" max="200" step="1" value="100"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Rotacion de colores</td>
+				<td><svg class="pap"><use href="#cerotressesenta"/></svg><input type="range" min="0" max="360" step="1" value="0"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>invertir</td>
+				<td><svg class="pap"><use href="#cerocien"/></svg><input type="range" min="0" max="100" step="1" value="0"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Opacidad</td>
+				<td><svg class="pap"><use href="#cerocien"/></svg><input type="range" min="0" max="100" step="1" value="100"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"/></td>
+				<td>Sepia</td>
+				<td><svg class="pap"><use href="#cerocien"/></svg><input type="range" min="0" max="100" step="1" value="0"/></td>
+			</tr>
+		</table>
+	</div>
+	<div id="imatge-container">
+		<img id="imatge" src="0.jpg"/>
+	</div>
+	<div id="container">
+		<input class="buttons" id="more" type="button" name="boton" value="Prev"/>
+		<input class="buttons" id="less" type="button" name="boton" value="Next"/>
+	</div>
+	<div id="menu">
+		<ul><p>Filtros svg</p>
+			<li class="desp">
+				<input type="checkbox" /><span>EmbossFilter</span>
+				<input class="hidden" type="range" min="0" max="200" step="1" value="0"/>
+			</li>
+			<li class="desp">
+				<input type="checkbox"/><span>SoberFilter</span>
+				<input class="hidden" type="range" min="0" max="200" step="1" value="0"/>
+			</li>
+		</ul>
+	</div>
+	
+	<svg>
+		<defs>
+			<filter id="embossFilter">
+				<feColorMatrix type="luminanceToAlpha" />
+				<feDiffuseLighting diffuseConstant="1" surfaceScale="10" result="diffuse3">
+					<feDistantLight elevation="28" azimuth="90" />
+				</feDiffuseLighting>
+				<feComposite operator="in" in2="diffuse3" />
+			</filter>
+		</defs>
+	</svg>
+	<svg>
+		<defs>
+			<filter id="soberFilter">
+				<feColorMatrix type="luminanceToAlpha" />
+				<feConvolveMatrix order="3" kernelMatrix="-1 -2 -1 0 0 0 1 2 1" />
+				<feConvolveMatrix order="3" kernelMatrix="-1 -2 -1 0 0 0 1 2 1" />
+			</filter>
+		</defs>
+	</svg>
+	<svg width="220" height="35" style="display: none;">
+		<defs>
+			<g id="cerocien">
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="30.500001" x2="5.750002" y1="20.500001" x1="5.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="30.250001" x2="203.750002" y1="20.250001" x1="203.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="30.250001" x2="105.75003" y1="20.250001" x1="105.75003" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="30.250001" x2="155.750045" y1="20.250001" x1="155.750045" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="30.250001" x2="55.750016" y1="20.250001" x1="55.750016" stroke-width="1.5" fill="none"/>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_7" y="17.25" x="1.124972" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">0</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_8" y="17.25" x="45.874984" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">25</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_9" y="17.25" x="95.874999" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">50</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_10" y="17.25" x="145.875013" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">75</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_11" y="17.25" x="188.625025" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">100</text>
+			</g>
+			<g id ="cerodoscientos">
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="30.500001" x2="5.750002" y1="20.500001" x1="5.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="30.250001" x2="203.750002" y1="20.250001" x1="203.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="30.250001" x2="105.75003" y1="20.250001" x1="105.75003" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="30.250001" x2="155.750045" y1="20.250001" x1="155.750045" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="30.250001" x2="55.750016" y1="20.250001" x1="55.750016" stroke-width="1.5" fill="none"/>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_7" y="17.25" x="1.124972" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">0</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_8" y="17.25" x="45.874984" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">50</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_9" y="17.25" x="90.874999" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">100</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_10" y="17.25" x="140.875013" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">150</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_11" y="17.25" x="188.625025" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">200</text>
+			</g>
+			<g id ="cerotressesenta">
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="30.500001" x2="5.750002" y1="20.500001" x1="5.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="30.250001" x2="203.750002" y1="20.250001" x1="203.750002" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="30.250001" x2="105.75003" y1="20.250001" x1="105.75003" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="30.250001" x2="155.750045" y1="20.250001" x1="155.750045" stroke-width="1.5" fill="none"/>
+				<line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="30.250001" x2="55.750016" y1="20.250001" x1="55.750016" stroke-width="1.5" fill="none"/>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_7" y="17.25" x="1.124972" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">0</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_8" y="17.25" x="45.874984" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">90</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_9" y="17.25" x="90.874999" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">180</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_10" y="17.25" x="140.875013" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">270</text>
+				<text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="18" id="svg_11" y="17.25" x="188.625025" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">360</text>
+			</g>
+		</defs>
+	</svg>
+</body>
+<script>
+	var filterNames = ["brightness", "contrast", "grayscale", "blur", "saturate", "hue-rotate", "invert", "opacity", "sepia", "url", "url"];
+	var filterUnits = ["%", "%", "%", "px", "%","deg","%","%", "%","#embossFilter","#soberFilter"];
+	var inputCheck = document.querySelectorAll('input[type="checkbox"]');
+	var inputRange = document.querySelectorAll('input[type="range"]');
+
+	window.addEventListener("load", main(), false);
+
+	function main() {
+		for (var i = 0; i < inputCheck.length; i++) {
+			inputCheck[i].addEventListener("click", function() { update() }, false);
+			inputRange[i].addEventListener("change", function() { update() }, false);
+		}
+	}
+
+	function update() {
+		var filterCombo = "";
+		for (var i = 0; i < inputRange.length; i++) {
+			if (inputCheck[i].checked) {
+				if (i >= 9){
+					filterCombo += filterNames[i] + "(" + filterUnits[i] + ")";
+				}
+				
+				if (filterCombo.length != 0) filterCombo += " ";
+				filterCombo += filterNames[i] + "(" + inputRange[i].value + filterUnits[i] + ")";
+			}
+		}
+		document.querySelector("#imatge").style.filter = filterCombo;
+	}
+</script>
+<script>
+	var i = document.querySelector("img"), q = 8, a = 0;
+	document.getElementById("less").addEventListener("click", function(e){
+		a = a + 1;
+		a = (a + q) % q;
+		i.src = a + ".jpg";
+	});
+	document.getElementById("more").addEventListener("click", function(e){
+		a = a - 1;
+		a = (a + q) % q;
+		i.src = a + ".jpg";
+	});
+	document.addEventListener("keydown", function(e) {
+		if ((e.keyCode == 37) || (e.keyCode == 39)) {
+			a = (a + (e.keyCode - 38) + q) % q;
+			i.src = a + ".jpg";
+		}
+	});
+</script>
+</html>
